@@ -1,0 +1,95 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: linear-gradient(45deg, #fd0e0e, #620800);
+  font-family: sans-serif;
+  margin: 0;
+}
+
+.card-container {
+  position: relative;
+  cursor: pointer;
+}
+
+.envelope-card {
+  width: 300px; /* Ajuste a largura conforme a necessidade */
+  height: 200px; /* Ajuste a altura conforme a necessidade */
+  background-color: #fa8072; /* Cor semelhante à da foto (bege) */
+  border-radius: 5px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden; /* Garante que a aba não vaze */
+  transform-style: preserve-3d; /* Para o efeito 3D da aba */
+  transition: transform 0.3s ease; /* Transição para o "clique" visual */
+}
+
+.envelope-card:active {
+  transform: scale(0.98); /* Feedback visual ao clicar */
+}
+
+.top-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%; /* Metade da altura para formar a aba */
+  background-color: #fabdb6; /* Mesma cor do corpo */
+  transform-origin: top center; /* Ponto de rotação no topo central */
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animação da abertura */
+  z-index: 10; /* Aba sempre na frente */
+  border-radius: 5px 5px 0 0; /* Arredondamento superior */
+  /* Cria o formato triangular da aba */
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    50% 70%,
+    0 0
+  ); /* Ajuste o % da altura para o triângulo */
+  border-bottom: 2px solid black;
+  /* Leve sombra na dobra */
+}
+
+.envelope-card.open .top-flap {
+  transform: rotateX(-180deg); /* Rotação para "abrir" */
+}
+
+.card-body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 5; /* Conteúdo abaixo da aba */
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.card-front h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0; /* Inicialmente invisível */
+  transition: opacity 0.5s ease-in-out;
+  color: #555;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.envelope-card.open .message {
+  opacity: 1; /* Tornar a mensagem visível */
+}
