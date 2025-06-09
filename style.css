@@ -14,11 +14,11 @@ body {
 }
 
 .envelope-card {
-  width: 300px; /* Ajuste a largura conforme a necessidade */
-  height: 200px; /* Ajuste a altura conforme a necessidade */
+  width: 700px; /* Ajuste a largura conforme a necessidade */
+  height: 500px; /* Ajuste a altura conforme a necessidade */
   background-color: #fa8072; /* Cor semelhante à da foto (bege) */
   border-radius: 5px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 25px px rgba(0, 0, 0, 0.2);
   position: relative;
   overflow: hidden; /* Garante que a aba não vaze */
   transform-style: preserve-3d; /* Para o efeito 3D da aba */
@@ -28,6 +28,25 @@ body {
 .envelope-card:active {
   transform: scale(0.98); /* Feedback visual ao clicar */
 }
+
+/*.top-flap-open {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 50%; /* Metade da altura para formar a aba 
+  background-color: #fabdb6; /* Mesma cor do corpo 
+  transform-origin: top center; /* Ponto de rotação no topo central 
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animação da abertura 
+  z-index: 10; /* Aba sempre na frente 
+  border-radius: 5px 5px 0 0; /* Arredondamento superior */
+/* Cria o formato triangular da aba 
+  clip-path: polygon(
+    
+  ); /* Ajuste o % da altura para o triângulo 
+  
+  /* Leve sombra na dobra 
+}*/
 
 .top-flap {
   position: absolute;
@@ -52,7 +71,8 @@ body {
 }
 
 .envelope-card.open .top-flap {
-  transform: rotateX(-180deg); /* Rotação para "abrir" */
+  transform: rotateX(-180deg);
+  /* Rotação para "abrir" */
 }
 
 .card-body {
@@ -77,6 +97,7 @@ body {
 }
 
 .message {
+  width: 320px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -84,12 +105,42 @@ body {
   opacity: 0; /* Inicialmente invisível */
   transition: opacity 0.5s ease-in-out;
   color: #555;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
 }
 
 .envelope-card.open .message {
   opacity: 1; /* Tornar a mensagem visível */
+}
+
+#voltar {
+  background-color: #555;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  position: absolute;
+
+  left: 40px;
+  z-index: 20;
+}
+#avancar {
+  background-color: #555;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  position: absolute;
+
+  right: 40px;
+  z-index: 20;
+}
+
+.botoes {
+  opacity: 1;
+
+  z-index: 20;
 }
