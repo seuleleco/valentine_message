@@ -140,11 +140,15 @@ body {
 }
 
 .botoes {
-  opacity: 1;
+  
 
   z-index: 20;
 }
 
-img {
- transition: 0.3s ease-in-out;
+#img3{
+  width: 85%;
+}
+
+#img4{
+  width: 85%;
 }
