@@ -17,24 +17,26 @@ document.addEventListener("DOMContentLoaded", () => {
   imagens.forEach((imagem) => {
     arrayImg.push(imagem);
   });
-
+ console.log(arrayImg);
   let i = 0;
 
+   
   function avancar() {
-    if ((i = 0 < arrayImg.length - 1)) {
+    if (i < arrayImg.length - 1) {
       i++;
-      arrayImg[i].style.display = "block";
-      arrayImg[i - 1].style.display = "none";
+      arrayImg[i].style.display = "none";
+      arrayImg[i - 1].style.display = "block";
     }
   }
   function voltar() {
-    if ((i = 0 < arrayImg.length - 1)) {
+    if (i > 0) {
       i--;
-      arrayImg[i].style.display = "block";
-      arrayImg[i + 1].style.display = "none";
+      arrayImg[i].style.display = "none";
+      arrayImg[i + 1].style.display = "block";
     }
   }
 
   avancarBtn.addEventListener("click", avancar);
   voltarBtn.addEventListener("click", voltar);
+  console.log(arrayImg);
 });
