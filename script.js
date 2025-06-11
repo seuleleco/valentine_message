@@ -1,4 +1,12 @@
+
 document.addEventListener("DOMContentLoaded", () => {
+ const musica = document.getElementById("musica");  
+ musica.play()
+ .then(() => {
+alert("Feliz Dia dos Namorados, minha linda! Você é a razão do meu sorriso e a luz dos meus dias. Te amo muito!❤️❤️💕💘💝💖💝💝💖❤️❤️❤️❤️");
+alert("Chegou uma carta para você! 💌");
+ });
+
   const cardContainer = document.querySelector(".card-container");
   const envelopeCard = document.querySelector(".envelope-card");
 
@@ -32,9 +40,13 @@ document.addEventListener("DOMContentLoaded", () => {
 ) 
    
   function avancar() {
+    
     if (i < arrayImg.length - 1) {
+      
       arrayImg[i].style.display = "none";
+      
       i++;
+      
       arrayImg[i].style.display = "block";
       
     }

@@ -145,10 +145,69 @@ body {
   z-index: 20;
 }
 
-#img3{
+#img3, #img4, #img15, #img14, #img12, #img9{
   width: 85%;
 }
 
-#img4{
-  width: 85%;
+/* ALTERAR APARENCIA DO PLACEHOLDER */
+::-webkit-input-placeholder {
+    color: #8361fc; 
+    font-size: 25px; 
+    text-shadow: #8361fc 0px 0px 0px;
+    font-style: italic;
+    opacity: 1; 
+    text-align: center;
+}
+#name{
+  border: 2px solid #000000;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: 2em;
+  border: none;
+  border-radius: 10px;
+  text-shadow: #000000 1px 1px 1px;
+  text-align: center;
+  height: 70px;
+  color: #fc9ffc;
+}
+
+#btn{
+  background-color: #8361fc;
+  color: #ffffff;
+  border: none;
+  padding: 20px 50px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  position: absolute;
+  top: 500px;
+  font-size: 19px;
+  z-index: 20;
+}
+
+#erromsg {
+  color: rgb(255, 255, 255);
+  
+  position: absolute;
+
+  z-index: 20;
+}
+
+#voltarerro{
+  background-color: #555;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  z-index: 20;
+}
+
+.message.active{
+  transition: opacity 0.5s ease-in-out;
 }
