@@ -1,11 +1,11 @@
-
-document.addEventListener("DOMContentLoaded", () => {
- const musica = document.getElementById("musica");  
+const musica = document.getElementById("musica");  
  musica.play()
  .then(() => {
 alert("Feliz Dia dos Namorados, minha linda! Você é a razão do meu sorriso e a luz dos meus dias. Te amo muito!❤️❤️💕💘💝💖💝💝💖❤️❤️❤️❤️");
 alert("Chegou uma carta para você! 💌");
  });
+document.addEventListener("DOMContentLoaded", () => {
+ 
 
   const cardContainer = document.querySelector(".card-container");
   const envelopeCard = document.querySelector(".envelope-card");
